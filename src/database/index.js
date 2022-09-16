@@ -8,7 +8,7 @@ const DB_CONFIG = {
 
 let dbase;
 try {
-  dbase = new Sequelize("lavie", "root", "root", DB_CONFIG)
+  dbase = new Sequelize("lavie", "root", "mysql", DB_CONFIG)
 } catch {
   console.log('Não conectado ao banco de dados')
 }

@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `LaVie`.`Pacientes` (
   `paciente_id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(50) NOT NULL,
   `email` VARCHAR(50) NOT NULL,
-  `idade` INT NOT NULL,
+  `idade` DATE,
   PRIMARY KEY (`paciente_id`))
 ENGINE = InnoDB;
 
