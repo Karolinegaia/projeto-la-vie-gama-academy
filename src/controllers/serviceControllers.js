@@ -1,6 +1,4 @@
-const Service = require('../models/Services');
-const Psychologists = require('../models/Psychologists');
-const Patient = require('../models/patients')
+const { Service , Patients , Psychologists} = require('../models');
 
 const serviceController = {
     listService: async (req, res) =>  {
