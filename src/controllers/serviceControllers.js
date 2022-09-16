@@ -1,4 +1,4 @@
-const Service = require('../models/Service');
+const Service = require('../models/Services');
 const Psychologists = require('../models/Psychologists');
 const Patient = require('../models/patients')
 
