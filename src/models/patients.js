@@ -16,7 +16,7 @@ const Patients = dbase.define(
       type: DataTypes.STRING,
     },
     idade: {
-      type: DataTypes.DATE,
+      type: DataTypes.INTEGER,
     }
   },
   {
