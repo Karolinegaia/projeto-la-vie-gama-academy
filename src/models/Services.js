@@ -1,7 +1,9 @@
 const dbase = require ('../database');
 const {DataTypes} = require('sequelize')
+const Psychologists = require('./Psychologists')
+const Patients = require('./patients')
 
-const Service = dbase.define("Atendimento",{
+const Services = dbase.define("Atendimento",{
     atendimento_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -14,10 +16,18 @@ const Service = dbase.define("Atendimento",{
       type: DataTypes.TEXT
     },
     Psicologos_psicologo_id: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      references: {
+        model: Psychologists, 
+        foreignKey: 'Psicologos_psicologo_id'
+      }
     },
     Pacientes_paciente_id: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      references: {
+        model: Patients,
+        foreignKey: 'Pacientes_paciente_id'
+      }
     }
   },
   {
@@ -27,4 +37,4 @@ const Service = dbase.define("Atendimento",{
     tableName: "atendimentos"
   });
   
-  module.exports = Service
+  module.exports = Services
