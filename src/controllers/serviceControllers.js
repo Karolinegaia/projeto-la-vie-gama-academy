@@ -1,9 +1,9 @@
-const { Service , Patients , Psychologists} = require('../models');
+const { Services , Patients , Psychologists} = require('../models');
 
 const serviceController = {
     listService: async (req, res) =>  {
         try {
-            const listService = await Service.findAll();    
+            const listService = await Services.findAll();    
 
             res.status(200).json(listService)
         } catch (error){
@@ -14,11 +14,11 @@ const serviceController = {
     serviceId: async (req, res) => {
         try {
             const {id} = req.params;
-            const serviceId = await Service.findByPk (id, {
+            const serviceId = await Services.findByPk (id, {
             include: [{
                 model: Psychologists
             },{
-                model: Patient
+                model: Patients
             }] 
             });
             if (serviceId !== null){
@@ -36,7 +36,7 @@ const serviceController = {
         try {
 
             const {data, observacao, Psicologos_psicologo_id, Pacientes_paciente_id} = req.body;
-            const newService = await Service.create ({
+            const newService = await Services.create({
                 data,
                 observacao,
                 Psicologos_psicologo_id,
