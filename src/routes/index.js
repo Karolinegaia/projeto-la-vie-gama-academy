@@ -17,8 +17,10 @@ routes.get('/patients/:id',patientController.listPatientId);
 routes.put('/patients/:id',patientController.updatePatient);
 routes.delete('/patients/:id',patientController.deletePatient);
 
-routes.post("/psicologos", psychologistsController.registerPsychologists)
-routes.get("/psicologos/list", psychologistsController.listPsychologists);
-routes.delete("/psicologos/:id", psychologistsController.deletarPsicologo);
+routes.post("/psychologists", psychologistsController.registerPsychologists)
+routes.get("/psychologists/list", psychologistsController.listPsychologists);
+routes.get("/psychologists/:id", psychologistsController.getPsychologistById)
+routes.delete("/psychologists/:id", psychologistsController.deletePsychologists);
+routes.put("/psychologists/:id", psychologistsController.updatePsychologists);
 
 module.exports = routes
